@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+
+<struts-config>
+	<form-beans>
+		<form-bean name="UpdateForm" type="com.naveen.struts.java.UpdateForm" />
+		<form-bean name="DeleteForm" type="com.naveen.struts.java.DeleteForm" />
+		<form-bean name="AddForm" type="com.naveen.struts.java.AddForm" />
+	</form-beans>
+
+	<global-exceptions>
+	</global-exceptions>
+
+	<global-forwards>
+		<forward name="added" path="/add.Subcription" />
+		<forward name="deleted" path="/delete.Subcription" />
+		<forward name="updated" path="/update.Subcription" />
+	</global-forwards>
+
+	<action-mappings>
+		<action input="/update.Subcription" name="UpdateForm" path="/update"
+			scope="request" type="com.naveen.struts.java.UpdateAction" />
+		<action input="/delete.Subcription" name="DeleteForm" path="/delete"
+			scope="request" type="com.naveen.struts.java.DeleteAction" />
+		<action input="/add.Subcription" name="AddForm" path="/add" scope="request"
+			type="com.naveen.struts.java.AddAction" />
+	</action-mappings>
+
+	<controller processorClass="org.apache.struts.tiles.TilesRequestProcessor" />
+
+	<message-resources parameter="ApplicationResource" />
+
+	<!-- ========================= Tiles plugin =============================== -->
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+	<!-- ========================= Validator plugin ================================= -->
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+	</plug-in>
+
+</struts-config>

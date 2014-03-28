@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+"http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+
+
+	<definition name="Tiles.Example" page="/BaseLayout.jsp">
+
+		<put name="Header" value="/Header.jsp" />
+		<put name="Menu" value="/Menu.jsp" />
+		<put name="Body" value="/Body.jsp" />
+		<put name="Footer" value="/Footer.jsp" />
+	</definition>
+
+	<definition name="add.Subcription" extends="Tiles.Example">
+		<put name="Body" value="/add.jsp" />
+	</definition>
+
+	<definition name="delete.Subcription" extends="Tiles.Example">
+		<put name="Body" value="/delete.jsp" />
+	</definition>
+
+
+	<definition name="update.Subcription" extends="Tiles.Example">
+		<put name="Body" value="/update.jsp" />
+	</definition>
+
+	<definition name="welcome.Subcription" extends="Tiles.Example">
+		<put name="Body" value="/welcomeStruts.jsp" />
+	</definition>
+	<definition name="list.Subcription" extends="Tiles.Example">
+		<put name="Body" value="/list.jsp" />
+	</definition>
+</tiles-definitions>
